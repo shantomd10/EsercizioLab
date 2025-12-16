@@ -2,48 +2,78 @@
 
 <head>
     
-    <style>
-            * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
 
-        /* Navbar */
-        .navbar {
-            background: #c0392b;
-            padding: 15px;
-        }
+    /* Navbar */
+    .navbar {
+        background: #34495e; /* colore più moderno e elegante */
+        padding: 15px 30px;
+        display: flex;
+        justify-content: center; /* centra le voci */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* effetto elegante */
+        border-radius: 8px; /* angoli leggermente arrotondati */
+    }
 
-        .navbar-nav {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+    .navbar-nav {
+        list-style: none;
+        display: flex;
+        gap: 40px; /* più spazio tra le parole */
+    }
 
-        .nav-link {
-            color: white;
-            text-decoration: none;
-        }
+    .nav-link {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 8px 12px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        position: relative;
+    }
 
-        .nav-link:hover {
-            color: #f1c40f;
-        }
+    .nav-link::after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 0;
+        background: #1abc9c; /* sottolineatura elegante */
+        transition: width 0.3s;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
 
-        /* Sezioni */
-        .tm-tab-content {
-            padding: 30px;
-            background: #f5f5f5;
-            min-height: 200px;
-        }
+    .nav-link:hover {
+        color: #1abc9c;
+    }
 
-        .tm-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-    </style>
+    .nav-link:hover::after {
+        width: 100%;
+    }
+
+    /* Sezioni */
+    .tm-tab-content {
+        padding: 30px;
+        background: #f5f5f5;
+        min-height: 200px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        margin-top: 20px;
+    }
+
+    .tm-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+</style>
+
 
 </head>
 
@@ -72,28 +102,16 @@
     <div id="Pizze" class = "tm-tab-content">
         <div class = "tm-list">
             <div class="tm-item">
-            <h3>Margherita</h3>
-            <p>Pomodoro e Mozzarella</p>
-            <span>€5,50</span>
-        </div>
+        <h3>Margherita</h3>
+        <p>Pomodoro e Mozzarella</p>
+        <span>€5,50</span>
+    </div>
 
-        <div class="tm-item">
-            <h3>Prosciutto</h3>
-            <p>Pomodoro,Mozzarella e Prosciutto</p>
-            <span>€6,00</span>
-        </div>
-        <div class = "tm-list">
-            <div class="tm-item">
-            <h3>Funghi</h3>
-            <p>Pomodoro,Mozzarella e Funghi</p>
-            <span>€5,50</span>
-        </div>
-
-        <div class="tm-item">
-            <h3>Wurstel & Salsiccia</h3>
-            <p>Pomodoro,Mozzarella,Wurstel e Salsiccia</p>
-            <span>€4,00</span>
-        </div>
+    <div class="tm-item">
+        <h3>Wurstel & Salsiccia</h3>
+        <p>Pomodoro,Mozzarella,Wurstel e Salsiccia</p>
+        <span>€4,00</span>
+    </div>
 
         </div>
     </div>
