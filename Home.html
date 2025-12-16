@@ -2,48 +2,78 @@
 
 <head>
     
-    <style>
-            * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
 
-        /* Navbar */
-        .navbar {
-            background: #c0392b;
-            padding: 15px;
-        }
+    /* Navbar */
+    .navbar {
+        background: #34495e; /* colore più moderno e elegante */
+        padding: 15px 30px;
+        display: flex;
+        justify-content: center; /* centra le voci */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* effetto elegante */
+        border-radius: 8px; /* angoli leggermente arrotondati */
+    }
 
-        .navbar-nav {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+    .navbar-nav {
+        list-style: none;
+        display: flex;
+        gap: 40px; /* più spazio tra le parole */
+    }
 
-        .nav-link {
-            color: white;
-            text-decoration: none;
-        }
+    .nav-link {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 8px 12px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        position: relative;
+    }
 
-        .nav-link:hover {
-            color: #f1c40f;
-        }
+    .nav-link::after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 0;
+        background: #1abc9c; /* sottolineatura elegante */
+        transition: width 0.3s;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
 
-        /* Sezioni */
-        .tm-tab-content {
-            padding: 30px;
-            background: #f5f5f5;
-            min-height: 200px;
-        }
+    .nav-link:hover {
+        color: #1abc9c;
+    }
 
-        .tm-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-    </style>
+    .nav-link:hover::after {
+        width: 100%;
+    }
+
+    /* Sezioni */
+    .tm-tab-content {
+        padding: 30px;
+        background: #f5f5f5;
+        min-height: 200px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        margin-top: 20px;
+    }
+
+    .tm-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+</style>
+
 
 </head>
 
@@ -68,62 +98,114 @@
         </div>
     </div>
     </nav>
+
     <!--Elenco pizze-->
-    <div id="Pizze" class = "tm-tab-content">
-        <div class = "tm-list">
-            <div class="tm-item">
-            <h3>Margherita</h3>
-            <p>Pomodoro e Mozzarella</p>
-            <span>€5,50</span>
-        </div>
+    
+            <div id="Pizze" class="tm-tab-content">
+                <div class="tm-list">
 
-        <div class="tm-item">
-            <h3>Prosciutto</h3>
-            <p>Pomodoro,Mozzarella e Prosciutto</p>
-            <span>€6,00</span>
-        </div>
-        <div class = "tm-list">
-            <div class="tm-item">
-            <h3>Funghi</h3>
-            <p>Pomodoro,Mozzarella e Funghi</p>
-            <span>€5,50</span>
-        </div>
+                    <div class="tm-list-item">
+                        <img src="https://assets-eu-01.kc-usercontent.com/6190ffc3-df26-019e-e092-120e0715df95/9c076f13-af22-410c-876d-7986dd243846/Pizza%20margherita.png?w=626&fm=webp&lossless=0&q=80" alt="Margherita" class="tm-list-item-img" height="250" width="350"><br><br>
+                        <div class="tm-black-bg tm-list-item-text">
+                            <h3 class="tm-list-item-name">
+                                Margherita <span class="tm-list-item-price">€5,50</span>
+                            </h3>
+                            <p class="tm-list-item-description">
+                                Pomodoro e mozzarella
+                            </p>
+                        </div>
+                    </div>
 
-        <div class="tm-item">
-            <h3>Wurstel & Salsiccia</h3>
-            <p>Pomodoro,Mozzarella,Wurstel e Salsiccia</p>
-            <span>€4,00</span>
-        </div>
+                    <div class="tm-list-item">
+                        <img src="https://lenti.it/wp-content/uploads/2023/12/ANTEPRIMA-copia.jpg" alt="Prosciutto" class="tm-list-item-img" height="250" width="350"><br><br>
+                        <div class="tm-black-bg tm-list-item-text">
+                            <h3 class="tm-list-item-name">
+                                Prosciutto <span class="tm-list-item-price">€6,00</span>
+                            </h3>
+                            <p class="tm-list-item-description">
+                                Pomodoro, mozzarella e prosciutto
+                            </p>
+                        </div>
+                    </div>
 
-        </div>
-    </div>
+                    <div class="tm-list-item">
+                        <img src="https://images.fidhouse.com/fidelitynews/wp-content/uploads/sites/6/2016/03/1457510916_110db3373692fa8c5a4526c9c5822483cdb11ffd-1046049218.jpg?width=1280&height=720&quality=80" alt="Funghi" class="tm-list-item-img" height="250" width="350"><br><br>
+                        <div class="tm-black-bg tm-list-item-text">
+                            <h3 class="tm-list-item-name">
+                                Funghi <span class="tm-list-item-price">€5,50</span>
+                            </h3>
+                            <p class="tm-list-item-description">
+                                Pomodoro, mozzarella e funghi
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tm-list-item">
+                        <img src="https://www.pizzartfano.com/utenti/pizzartfano_com/cache/_pics/9/5/img-9552_9dffdb8955c280e8114cd56e1856b5ac_t.jpg" alt="Wurstel e Salsiccia" class="tm-list-item-img" height="250" width="350"><br><br>
+                        <div class="tm-black-bg tm-list-item-text">
+                            <h3 class="tm-list-item-name">
+                                Wurstel & Salsiccia <span class="tm-list-item-price">€4,00</span>
+                            </h3>
+                            <p class="tm-list-item-description">
+                                Pomodoro, mozzarella, wurstel e salsiccia
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 
      <!--Elenco dolci-->
-    <div id="Dolci" class = "tm-tab-content">
-        <div class = "tm-list">
-            <div class="tm-item">
-        <h3>Tiramisù</h3>
-        <p>Mascarpone, caffè, savoiardi</p>
-        <span>€4,50</span>
-    </div>
+        <div id="Dolci" class="tm-tab-content">
+        <div class="tm-list">
 
-    <div class="tm-item">
-        <h3>Panna Cotta</h3>
-        <p>Vaniglia con coulis ai frutti di bosco</p>
-        <span>€4,00</span>
-    </div>
+            <div class="tm-list-item">
+                <img src="https://staticcookist.akamaized.net/wp-content/uploads/sites/21/2024/12/tiramisu-risultato.jpeg" alt="Tiramisù" class="tm-list-item-img" height="250" width="350"><br><br>
+                <div class="tm-black-bg tm-list-item-text">
+                    <h3 class="tm-list-item-name">
+                        Tiramisù <span class="tm-list-item-price">€4,50</span>
+                    </h3>
+                    <p class="tm-list-item-description">
+                        Mascarpone, caffè e savoiardi
+                    </p>
+                </div>
+            </div>
 
-    <div class="tm-item">
-        <h3>Cannolo Siciliano</h3>
-        <p>Ricotta dolce e granella di pistacchio</p>
-        <span>€3,50</span>
-    </div>
+            <div class="tm-list-item">
+                <img src="https://www.cucchiaio.it/content/cucchiaio/it/ricette/2009/11/ricetta-panna-cotta/jcr:content/header-par/image_single.img.jpg/1646829031222.jpg" alt="Panna Cotta" class="tm-list-item-img" height="250" width="350"><br><br>
+                <div class="tm-black-bg tm-list-item-text">
+                    <h3 class="tm-list-item-name">
+                        Panna Cotta <span class="tm-list-item-price">€4,00</span>
+                    </h3>
+                    <p class="tm-list-item-description">
+                        Vaniglia con coulis ai frutti di bosco
+                    </p>
+                </div>
+            </div>
 
-    <div class="tm-item">
-        <h3>Torta al Cioccolato</h3>
-        <p>Cioccolato fondente</p>
-        <span>€4,00</span>
-    </div>
+            <div class="tm-list-item">
+                <img src="https://www.cucchiaio.it/content/dam/cucchiaio/it/ricette/2015/11/cannoli-siciliani/Cannoli%20siciliani-1.jpg" alt="Cannolo Siciliano" class="tm-list-item-img" height="250" width="350"><br><br>
+                <div class="tm-black-bg tm-list-item-text">
+                    <h3 class="tm-list-item-name">
+                        Cannolo Siciliano <span class="tm-list-item-price">€3,50</span>
+                    </h3>
+                    <p class="tm-list-item-description">
+                        Ricotta dolce e pistacchio
+                    </p>
+                </div>
+            </div>
+
+            <div class="tm-list-item">
+                <img src="https://images.fidhouse.com/fidelitynews/wp-content/uploads/sites/6/2016/02/1455030622_673a33e768c09d4e3c9fb8296d93a31086f6db25-287091876.jpg?width=1280&height=720&quality=80" alt="Torta al Cioccolato" class="tm-list-item-img" height="250" width="350"><br><br>
+                <div class="tm-black-bg tm-list-item-text">
+                    <h3 class="tm-list-item-name">
+                        Torta al Cioccolato <span class="tm-list-item-price">€4,00</span>
+                    </h3>
+                    <p class="tm-list-item-description">
+                        Cioccolato fondente
+                    </p>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -132,7 +214,7 @@
     <div id="bevande" class = "tm-tab-content">
         <div class = "tm-list">
             <div class="tm-list-item">
-            <img src="img/espresso.png" alt="Image" class="tm-list-item-img">
+            <img src="https://barista-espresso.it/cdn/shop/articles/espresso-101-lar-dig-grunderna-i-espresso-962632.webp?v=1718937966" alt="Image" class="tm-list-item-img" height="250" width="350"><br><br>
             <div class="tm-black-bg tm-list-item-text">
                 <h3 class="tm-list-item-name">
                 Caff&egrave; Espresso <span class="tm-list-item-price">€2.50</span>
@@ -144,7 +226,7 @@
             </div>
 
             <div class="tm-list-item">
-            <img src="img/cappuccino.png" alt="Image" class="tm-list-item-img">
+            <img src="https://www.assolatte.it/zpublish/4/uploads/4/salut_news/14697161553756086825_cappuccino%20colazione.jpg" alt="Image" class="tm-list-item-img" height="250" width="350"><br><br>
             <div class="tm-black-bg tm-list-item-text">
                 <h3 class="tm-list-item-name">
                 Cappuccino <span class="tm-list-item-price">€3.00</span>
@@ -156,7 +238,7 @@
             </div>
 
             <div class="tm-list-item">
-            <img src="img/latte.png" alt="Image" class="tm-list-item-img">
+            <img src="https://as2.ftcdn.net/v2/jpg/00/75/89/49/1000_F_75894966_grMyKtLrU2dDQzMNKxtkN9PfDxg5iQpE.jpg" alt="Image" class="tm-list-item-img" height="250" width="350"><br><br>
             <div class="tm-black-bg tm-list-item-text">
                 <h3 class="tm-list-item-name">
                 Caff&egrave; Latte <span class="tm-list-item-price">€3.20</span>
@@ -168,7 +250,7 @@
             </div>
 
             <div class="tm-list-item">
-            <img src="img/mocha.png" alt="Image" class="tm-list-item-img">
+            <img src="https://ichef.bbc.co.uk/ace/standard/1600/food/recipes/the_perfect_mocha_coffee_29100_16x9.jpg.webp" alt="Image" class="tm-list-item-img" height="250" width="350"><br><br>
             <div class="tm-black-bg tm-list-item-text">
                 <h3 class="tm-list-item-name">
                 Mocha <span class="tm-list-item-price">€3.50</span>
